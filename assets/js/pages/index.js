@@ -1,3 +1,13 @@
+// show or hide location list
+const btnToggleLocation = document.querySelector('.search__location--btn');
+const locationList = document.querySelector('.search__location--list');
+function toggleLocationList() {
+    locationList.classList.toggle('show');
+}
+// toggleLocationList()
+
+btnToggleLocation.addEventListener("click", toggleLocationList);
+
 // make location
 const provincesSelectBox = document.querySelector('.search__location--province ul');
 const districtSelectBox = document.querySelector('.search__location--district ul');

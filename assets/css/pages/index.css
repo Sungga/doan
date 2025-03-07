@@ -42,15 +42,21 @@
     height: 44px;
     border-radius: 20px;
     border: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    cursor: pointer;
     position: relative;
 }
 
 .search__location:hover {
     background-color: #f1f1f1;
+}
+
+.search__location--btn {
+    padding: 0 8px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .search__location p {
@@ -64,13 +70,25 @@
 .search__location--list {
     position: absolute;
     background-color: var(--color-white);
-    top: 60px;
-    right: -20px;
+    top: 40px;
+    right: -10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in;
 
     display: flex;
     padding: 16px;
     border-radius: 20px;
+}
+
+.search__location--list.show {
+    visibility: inherit;
+    opacity: 1;
+    top: 60px;
+    height: 288px;
 }
 
 .search__location--province {
