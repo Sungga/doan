@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Việc tốt</title>
+
+    <!-- font google -->
+    <link rel="stylesheet" href="assets/font/Inter/Inter-VariableFont_opsz,wght.ttf">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="assets/font/fontawesome/css/all.min.css">
+
+    <!-- font css -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/pages/index.css">
+
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header__left">
+                <div class="header__logo">
+                    <a href="#">
+                        <img src="assets/images/VIECTOT.png" alt="Logo">
+                    </a>
+                </div>
+                <ul class="header__menu">
+                    <li><a class="header__item--left header__item--focus" href="#">Tìm việc làm</a></li>
+                    <li><a class="header__item--left" href="#">Tuyển dụng</a></li>
+                    <li><a class="header__item--left" href="#">Hồ sơ</a></li>
+                </ul>
+            </div>
+            <div class="header__right">
+                <ul class="header__menu">
+                    <li><a class="header__item--right header__item--login" href="#">Đăng nhập</a></li>
+                    <li><a class="header__item--right header__item--register" href="#">Đăng ký</a></li>
+                    <!-- <li><a class="header__item--right header__item--account" href="#"><img src="assets/images/user.svg" alt="">Trương Anh Vũ</a></li> -->
+                    <li><a class="header__item--right header__item--recruit" href="#">Đăng tuyển & tìm hồ sơ</a></li>
+                </ul>
+            </div>
+        </header>
+    
+        <section class="slider">
+            <div class="search">
+                <input type="text" name="search" id="" class="search__text" placeholder="Vị trí tuyển dụng, tên công ty">
+                <div class="search__center">
+                    <div class="search__location">
+                        <p style="user-select: none;"><i class="fa-solid fa-location-dot"></i>Địa điểm</p>
+                        <p><i class="fa-solid fa-angle-down"></i></p>
+                        <div class="search__location--list">
+                            <div class="search__location--province">
+                                <div class="search__location--provinceSearch">
+                                    <input type="text" name="" id="" placeholder="Tìm tỉnh, thành phố,...">
+                                </div>
+                                <ul>
+                                    <!-- <li>
+                                        <input type="checkbox" name="" id="">
+                                        <p>Hồ Chí Minh</p>
+                                        <i class="fa-solid fa-angle-right search__location--toDistrict"></i>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div class="search__location--district">
+                                <h3>QUẬN/HUYỆN</h3>
+                                <ul>
+                                    <!-- <li><input type="checkbox" name="" id="">
+                                        <p>Quận 1</p>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search__right"><button class="search__btn"><i class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</button></div>
+            </div>
+            <div class="slide__background">
+                <img src="assets/images/slide_pink.jpg" alt="">
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/pages/index.js"></script>
+</body>
+</html>

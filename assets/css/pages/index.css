@@ -1,0 +1,258 @@
+.container {
+    margin-top: var(--header-height);
+}
+
+.slider {
+    position: relative;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 8px;
+    background-color: var(--color-white);
+    height: 60px;
+    border-radius: 40px;
+    width: 800px;
+
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search__text {
+    width: calc(60%);
+    height: 44px;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 0 10px;
+    border-right: 1px solid var(--color-black-medium);
+}
+
+.search__center {
+    width: calc(40% / 5 * 3);
+    padding: 0 10px;
+}
+
+.search__location {
+    width: 100%;
+    height: 44px;
+    border-radius: 20px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.search__location:hover {
+    background-color: #f1f1f1;
+}
+
+.search__location p {
+    font-size: 1.4rem;
+}
+
+.search__location i {
+    margin: 0 8px;
+}
+
+.search__location--list {
+    position: absolute;
+    background-color: var(--color-white);
+    top: 60px;
+    right: -20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    padding: 16px;
+    border-radius: 20px;
+}
+
+.search__location--province {
+    border-right: 1px solid var(--color-black-pale);
+    padding-right: 16px;
+}
+
+.search__location--province li,
+.search__location--district li {
+    padding: 12px 16px 12px 20px;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.search__location--province li:hover,
+.search__location--district li:hover {
+    background-color: var(--color-black-pale);
+}
+
+.search__location--province li:hover p,
+.search__location--district li:hover p {
+    color: var(--color-base);
+}
+
+.search__location--provinceSearch {
+    width: 100%;
+    box-shadow: 0px 4px 4px -4px rgba(37, 37, 37, 0.3);
+}
+
+.search__location--province input[type = "text"] {
+    padding: 8px 16px;
+    width: 320px;
+    outline: none;
+    border-radius: 20px;
+    border: 1px solid var(--color-black);
+    margin-bottom: 16px;
+    font-size: var(--font-size-base);
+}
+
+.search__location--province ul,
+.search__location--district ul {
+    overflow-y: scroll;
+    max-height: 200px;
+    padding-top: 16px;
+}
+
+.search__location--province ul::-webkit-scrollbar,
+.search__location--district ul::-webkit-scrollbar {
+    width: 4px;
+}
+
+.search__location--province ul::-webkit-scrollbar-thumb,
+.search__location--district ul::-webkit-scrollbar-thumb {
+    background-color: var(--color-black-medium);
+    border-radius: 4px;
+}
+
+.search__location--province ul::-webkit-scrollbar-track,
+.search__location--district ul::-webkit-scrollbar-track {
+    background-color: var(--color-white);
+    border-radius: 4px;
+}
+
+/* Checkbox cơ bản */
+.search__location--province input[type="checkbox"],
+.search__location--district input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-right: 8px;
+}
+
+/* Hover - đổi màu viền */
+.search__location--province li:hover input[type="checkbox"],
+.search__location--district li:hover input[type="checkbox"] {
+    border-color: var(--color-base);
+}
+
+/* Khi được chọn (checked) */
+.search__location--province input[type="checkbox"]:checked,
+.search__location--district input[type="checkbox"]:checked {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+}
+
+/* Hiển thị dấu tích (✔) khi checked */
+.search__location--province input[type="checkbox"]::after,
+.search__location--district input[type="checkbox"]::after {
+    content: "✔";
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;  /* Mặc định ẩn */
+}
+
+/* Khi checked thì hiện dấu tích */
+.search__location--province input[type="checkbox"]:checked::after,
+.search__location--district input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+.search__location--province,
+.search__location--district {
+    user-select: none;
+}
+
+.search__location--toDistrict {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background-color: var(--color-white);
+    padding: 5px 8px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+}
+
+.search__location--toDistrict:hover {
+    color: var(--color-base);
+}
+
+.search__location--district {
+    padding-left: 16px;
+    width: 280px;
+}
+
+.search__location--district h3 {
+    font-size: 2rem;
+    padding-bottom: 18px;
+    padding-top: 6px;
+    font-weight: 500;
+    color: #909090;
+    box-shadow: 0px 4px 4px -4px rgba(37, 37, 37, 0.3);
+}
+
+.search__right {
+    width: calc(40% / 5 * 2);
+    padding-right: 16px;
+    border-left: 1px solid var(--color-black-medium);
+    padding: 0 10px;
+}
+
+.search__btn {
+    width: 100%;
+    border-left: 1px solid #eee;
+    height: 44px;
+    font-size: var(--font-size-base);
+    border: 1px solid var(--color-base);
+    border-radius: 28px;
+    background-color: var(--color-base);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.search__btn:hover {
+    filter: brightness(1.1);
+}
+
+.search__btn i {
+    margin-right: 4px;
+}
+
+.slide__background img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}

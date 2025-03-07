@@ -1,0 +1,106 @@
+header {
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--color-white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom: 2px solid var(--color-black-pale);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: auto;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header__logo img {
+    width: calc(var(--header-height) - 1px);
+}
+
+.header__menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header__menu .header__item--left {
+    color: var(--color-black);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: all .2s ease-in;
+}
+
+.header__menu li:hover .header__item--left {
+    color: var(--color-base);
+}
+
+.header__menu .header__item--left.header__item--focus {
+    color: var(--color-base);
+}
+
+.header__right {
+    margin-right: 20px;
+}
+
+.header__item--right {
+    font-size: 1.4rem;
+    display: block;
+    line-height: 40px;
+    padding: 0 16px;
+    border: 1px solid var(--color-base);
+    height: 40px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.header__item--login,
+.header__item--recruit {
+    background-color: var(--color-white);
+    color: var(--color-base);
+    transition: all.2s ease-in;
+}
+
+.header__item--login:hover,
+.header__item--recruit:hover {
+    background-color: var(--color-base);
+    color: var(--color-white);
+}
+
+.header__item--register {
+    background-color: var(--color-base);
+    color: var(--color-white);
+    transition: all.2s ease-in;
+}
+
+.header__item--register:hover {
+    background-color: var(--color-white);
+    color: var(--color-base);
+}
+
+.header__item--account {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__item--account img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+    border: 1px solid var(--color-black);
+}
