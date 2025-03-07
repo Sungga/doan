@@ -172,7 +172,7 @@ document.addEventListener("click", function (event) {
 
             // Nếu tất cả quận/huyện được chọn =>  chọn "Tất cả"
             const isEveryChecked = Array.from(allDistricts).every(district => district.checked);
-            if (inputAllDistrict) {
+            if (isEveryChecked) {
                 inputAllDistrict.checked = true;
             }
         }
