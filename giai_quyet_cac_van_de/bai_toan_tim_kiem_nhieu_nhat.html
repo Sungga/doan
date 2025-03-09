@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận diện ngành nghề</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tìm kiếm công việc</h2>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm...">
+        <button onclick="detectCategory()">Tìm kiếm</button>
+    </div>
+
+    <div class="result" id="resultText"></div>
+
+    <script>
+        // Danh sách từ khóa phổ biến theo từng ngành nghề
+        const jobKeywords = {
+            "Công nghệ thông tin": ["lập trình", "developer", "backend", "frontend", "ai", "it", "fullstack"],
+            "Marketing": ["seo", "quảng cáo", "content", "truyền thông", "digital marketing"],
+            "Tài chính": ["kế toán", "tài chính", "chứng khoán", "đầu tư", "banking"]
+        };
+
+        function detectCategory() {
+            const searchText = document.getElementById("searchInput").value.toLowerCase();
+            let detectedCategory = "Không xác định";
+
+            for (const category in jobKeywords) {
+                if (jobKeywords[category].some(keyword => searchText.includes(keyword.toLowerCase()))) {
+                    detectedCategory = category;
+                    break;
+                }
+            }
+
+            document.getElementById("resultText").innerText = `Ngành nghề gợi ý: ${detectedCategory}`;
+        }
+    </script>
+
+</body>
+</html>

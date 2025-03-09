@@ -1,11 +1,15 @@
 :root {
   --color-white: #fff;
   --color-black: #000;
+  --color-red: #ff0000;
+  --color-red-pale: #ffdddd;
   --color-black-medium: #ccc;
   --color-black-pale: #eee;
-  /* --color-base: #046bc9; */
-  --color-base: #f58ee2;
+  --color-base: #046bc9;
+  --color-base-pale: #6ab7ff;
+  /* --color-base: #f58ee2; */
   --color-base-bold: #046bc9;
+  --color-background-white: rgba(255, 255, 255, 0.5);
 
 
   --font-size-base: 1.4rem;
@@ -14,3 +18,22 @@
 
   --header-height: 72px;
 }
+
+.grid-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media (min-width: 576px) {
+    .grid-container {
+      max-width: 540px; } }
+  @media (min-width: 768px) {
+    .grid-container {
+      max-width: 720px; } }
+  @media (min-width: 992px) {
+    .grid-container {
+      max-width: 960px; } }
+  @media (min-width: 1200px) {
+    .grid-container {
+      max-width: 1140px; } }

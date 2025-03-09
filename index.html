@@ -45,47 +45,565 @@
         </header>
     
         <section class="slider">
-            <div class="search">
-                <input type="text" name="search" id="" class="search__text" placeholder="Vị trí tuyển dụng, tên công ty">
-                <div class="search__center">
-                    <div class="search__location">
-                        <div class="search__location--btn">
-                            <p style="user-select: none;"><i class="fa-solid fa-location-dot"></i>Địa điểm</p>
-                            <p><i class="fa-solid fa-angle-down"></i></p>
-                        </div>
-                        <div class="search__location--list">
-                            <div class="search__location--province">
-                                <div class="search__location--provinceSearch">
-                                    <input type="text" name="" id="" placeholder="Tìm tỉnh, thành phố,...">
-                                </div>
-                                <ul>
-                                    <!-- <li>
-                                        <input type="checkbox" name="" id="">
-                                        <p>Hồ Chí Minh</p>
-                                        <i class="fa-solid fa-angle-right search__location--toDistrict"></i>
-                                    </li> -->
-                                </ul>
+            <div class="slide__background">
+                <img src="assets/images/slide2.jpg" alt="">
+            </div>
+            <div class="grid-container">
+                <div class="slider__top" style="width: 100%; height: 24px;"></div>
+                <div class="search">
+                    <input type="text" name="search" id="" class="search__text" placeholder="Vị trí tuyển dụng, tên công ty">
+                    <div class="search__center">
+                        <div class="search__location">
+                            <div class="search__location--btn">
+                                <p style="user-select: none;"><i class="fa-solid fa-location-dot"></i>Địa điểm</p>
+                                <p><i class="fa-solid fa-angle-down"></i></p>
                             </div>
-                            <div class="search__location--district">
-                                <h3>QUẬN/HUYỆN</h3>
-                                <ul>
-                                    <!-- <li><input type="checkbox" name="" id="">
-                                        <p>Quận 1</p>
-                                    </li> -->
-                                </ul>
+                            <div class="search__location--list">
+                                <div class="search__location--province">
+                                    <div class="search__location--provinceSearch">
+                                        <input type="text" name="" id="" placeholder="Tìm tỉnh, thành phố,...">
+                                    </div>
+                                    <ul>
+                                        <!-- <li>
+                                            <input type="checkbox" name="" id="">
+                                            <p>Hồ Chí Minh</p>
+                                            <i class="fa-solid fa-angle-right search__location--toDistrict"></i>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                                <div class="search__location--district">
+                                    <h3>QUẬN/HUYỆN</h3>
+                                    <ul>
+                                        <!-- <li><input type="checkbox" name="" id="">
+                                            <p>Quận 1</p>
+                                        </li> -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="search__right"><button class="search__btn"><i class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</button></div>
                 </div>
-                <div class="search__right"><button class="search__btn"><i class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</button></div>
-            </div>
-            <div class="slide__background">
-                <img src="assets/images/slide_pink.jpg" alt="">
+                <div class="slider__bottom">
+                    <div class="slider__category">
+                        <ul class="slider__category--list">
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Kinh doanh/Bán hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Kinh doanh/Bán hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Kinh doanh/Bán hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Kinh doanh/Bán hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Kinh doanh/Bán hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Kinh doanh/Bán hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="slider__category--list">
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Công nghệ thông tin</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Công nghệ thông tin</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Công nghệ thông tin</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Công nghệ thông tin</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Công nghệ thông tin</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Công nghệ thông tin</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="slider__category--list">
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Nhân sự/Hành chính/Pháp chế</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Nhân sự/Hành chính/Pháp chế</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Nhân sự/Hành chính/Pháp chế</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Nhân sự/Hành chính/Pháp chế</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Nhân sự/Hành chính/Pháp chế</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Nhân sự/Hành chính/Pháp chế</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="slider__category--list">
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Chăm sóc khách hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Chăm sóc khách hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Chăm sóc khách hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Chăm sóc khách hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Chăm sóc khách hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="slider__category--topSearch">
+                                    <h3>Được tìm kiếm nhiều nhất</h3>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Nhân viên kinh doanh</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Lập trình PHP</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Trưởng phòng marketing</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Dịch vụ khách hàng</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Tư vấn bảo hiểm</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>IT Helpdesk</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Vận hành sàn thương mại điện tử</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Laravel</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Javascript</a>
+                                    <a href="#"><i class="fa-solid fa-fire" style="color: #ff4242;"></i>Unity Developer</a>
+                                </div>
+                                <a href="#" class="slider__category--item">
+                                    <p class="slider__category--name">Chăm sóc khách hàng</p>
+                                    <i class="fa-solid fa-angle-right slider__category--iconToRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="slider__pagination">
+                            <div class="slider__pagination--left">
+                                <p>1/4</p>
+                            </div>
+                            <div class="slider__pagination--right">
+                                <i class="fa-solid fa-angle-left prevButton disabled" style="margin-right: 4px;"></i>
+                                <i class="fa-solid fa-angle-right nextButton"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__bottom--right">
+                        <div class="slider__jobAd">
+                            <a href="#">
+                                <img src="./assets/images/slider_ad1.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="./assets/images/slider_ad2.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="./assets/images/slider_ad3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="slider__workMarket">
+                            <div class="slider__workMarket--left">
+                                <h3 class="slider__workMarket--title">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                    Thị trường việc làm <span class="slider__workMarket--time"></span>
+                                </h3>
+                                <p class="slider__workMarket--newJob">Việc làm mới hôm nay <span>4.538</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
     <script src="assets/js/header.js"></script>
     <script src="assets/js/pages/index.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString("vi-VN", {
+                weekday: "long",
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            });
+
+            const workMarketTitle = document.querySelector(".slider__workMarket h3 span");
+            workMarketTitle.innerHTML += ` ${formattedDate}`;
+        });
+    </script>
 </body>
 </html>

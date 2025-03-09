@@ -1,3 +1,4 @@
+// ---------------------<< js search >>---------------------------------
 // show or hide location list
 const btnToggleLocation = document.querySelector('.search__location--btn');
 const locationList = document.querySelector('.search__location--list');
@@ -203,4 +204,118 @@ document.querySelector(".search__location--provinceSearch input[type='text']").a
         item.style.display = provinceName.includes(searchText) ? "flex" : "none";
     });
 });
+
+// ---------------------------------------------<< js category >>------------------------------------------------
+const categoryList = document.querySelectorAll('.slider__category--list');
+const sliderPaginationNumber = document.querySelector('.slider__pagination .slider__pagination--left p');
+const prevButton = document.querySelector('.slider__pagination .slider__pagination--right .prevButton');
+const nextButton = document.querySelector('.slider__pagination .slider__pagination--right .nextButton');
+
+function createSliderPaginationNumber() {
+    const categoryListCount = categoryList.length;
+    sliderPaginationNumber.innerHTML = `
+        <span class="current-page">1</span>
+        /
+        <span class="total-pages">${categoryListCount}</span>
+    `;
+}
+createSliderPaginationNumber();
+
+function updatePageButtons() {
+    const currentPage = document.querySelector('.slider__pagination .slider__pagination--left .current-page');
+    const totalPages = document.querySelector('.slider__pagination .slider__pagination--left .total-pages');
+
+    if(currentPage.innerHTML == '1') {
+        document.querySelector('.slider__pagination .slider__pagination--right .prevButton').classList.add('disabled');
+        document.querySelector('.slider__pagination .slider__pagination--right .nextButton').classList.remove('disabled');
+    }
+    else if(currentPage.innerHTML == totalPages.innerHTML) {
+        document.querySelector('.slider__pagination .slider__pagination--right .prevButton').classList.remove('disabled');
+        document.querySelector('.slider__pagination .slider__pagination--right .nextButton').classList.add('disabled');
+    }
+    else {
+        document.querySelector('.slider__pagination .slider__pagination--right .prevButton').classList.remove('disabled');
+        document.querySelector('.slider__pagination .slider__pagination--right .nextButton').classList.remove('disabled');
+    }
+}
+updatePageButtons();
+
+function updatePage(indexShow) {
+    indexShow--;
+    categoryList.forEach((item, index) => {
+        if(indexShow == index) {
+            item.style.display = 'block';
+        }
+        else {
+            item.style.display = 'none';
+        }
+    })
+}
+updatePage(1);
+
+function goToNextPage() {
+   
+}
+
+// Chuyển đến trang tiếp theo
+function clickGoToNextPage() {
+    const currentPageEl = document.querySelector('.slider__pagination .slider__pagination--left .current-page');
+    const totalPagesEl = document.querySelector('.slider__pagination .slider__pagination--left .total-pages');
+    
+    let currentPage = parseInt(currentPageEl.innerHTML);
+    let totalPages = parseInt(totalPagesEl.innerHTML);
+
+    if (currentPage < totalPages) {
+        const value = currentPage + 1;
+        currentPageEl.innerHTML = value;
+        updatePageButtons();
+        updatePage(value);
+    }
+}
+
+// Quay lại trang trước
+function clickGoToPrevPage() {
+    const currentPageEl = document.querySelector('.slider__pagination .slider__pagination--left .current-page');
+    
+    let currentPage = parseInt(currentPageEl.innerHTML);
+    
+    if (currentPage > 1) {
+        const value = currentPage - 1;
+        currentPageEl.innerHTML = value;
+        updatePageButtons();
+        updatePage(value);
+    }
+}
+
+// Gắn sự kiện click cho nút chuyển trang
+prevButton.addEventListener('click', clickGoToPrevPage);
+nextButton.addEventListener('click', clickGoToNextPage);
+
+// ---------------------------------------------<< js slider job ad >>------------------------------------------------
+const sliderAdImgs = document.querySelectorAll('.slider__jobAd img');
+let indexValue = 0;
+let statusIndexValueIsNext = true;
+
+function setSlidePosition(indexShow) {
+    indexValue = indexShow;
+    for (let i = 0; i < sliderAdImgs.length; i++) {
+        sliderAdImgs[i].style.left = `${(i - indexShow ) * 100}%`;
+    }
+}
+setSlidePosition(0);
+
+function autoPlay() {
+    if (indexValue >= sliderAdImgs.length - 1) {  
+        statusIndexValueIsNext = false;  // Khi đến ảnh cuối, quay lại
+    } 
+    else if (indexValue <= 0) {  
+        statusIndexValueIsNext = true;   // Khi về ảnh đầu, tiến tới
+    }
+
+    indexValue += statusIndexValueIsNext ? 1 : -1;
+    setSlidePosition(indexValue);
+
+    setTimeout(autoPlay, 5000);
+}
+setTimeout(autoPlay, 5000);
 
