@@ -446,6 +446,7 @@
     padding: 22px 24px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .slider__workMarket--left {
@@ -469,7 +470,304 @@
 }
 
 .slider__workMarket--newJob span {
-    color: #FFD700;
+    color: var(--color-yellow);
     font-weight: 700;
     font-size: 1.6rem;
+}
+
+.slider__workMarket--right {
+    width: 50%;
+    position: relative;
+}
+
+.slider__workMarket--totalJob {
+    font-size: 2.4rem;
+    color: var(--color-white);
+    text-align: center;
+    padding-top: 20px;
+}
+
+.slider__workMarket--totalJob span {
+    color: var(--color-yellow);
+    font-weight: 700;
+}
+
+.slider__workMarket--seeMore {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+    font-weight: 600;
+    /* display: none; */
+}
+
+.slider__workMarket:hover .slider__workMarket--seeMore {
+    visibility: initial;
+    opacity: 1;
+    top: -5px;
+}
+
+.slider__workMarket--seeMore:hover {
+    font-size: 1.6rem;
+}
+
+.slider__workMarket--seeMore p {
+    line-height: 2px;
+}
+
+/* -------------------------------------<< dashboard >>----------------------------------------- */
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    user-select: none;
+    cursor: pointer;
+}
+
+.dashboard__container {
+    margin: auto;
+    width: 1140px;
+    background: url('../../images/bgr_white.jpg');
+    border-radius: 12px;
+    position: relative;
+    cursor: auto;
+}
+
+
+.dashboard__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.dashboard__close i {
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--color-base);
+    font-size: 3.2rem;
+    background-color: var(--color-white);
+    transition: background-color .3s ease;
+}
+
+.dashboard__title {
+    font-size: 24px;
+    padding: 12px 24px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 0 8px var(--color-black-medium);
+    margin: 20px 20px 0 20px;
+}
+
+.dashboard__title span {
+    color: var(--color-base);
+}
+
+.dashboard__content {
+    padding: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard__left {
+    width: 298px;
+    height: 388px;
+    box-shadow: 0 0 8px var(--color-black-medium);
+    padding: 8px 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+}
+
+.dashboard__left h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 6px 10px 12px;
+}
+
+.dashboard__left--list {
+    width: 100%;
+    height: 348px;
+    overflow-y: scroll;
+}
+
+.dashboard__left--list::-webkit-scrollbar {
+    width: 0;
+}
+
+.dashboard__left--list::-webkit-scrollbar-thumb {
+    border-radius: 0;
+}
+
+.dashboard__left--list::-webkit-scrollbar-track {
+    border-radius: 0;
+}
+
+.dashboard__left--item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    transition: all .2s ease;
+}
+
+.dashboard__left--item:hover {
+    background-color: #dcdcdc;
+}
+
+.dashboard__left--img img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+}
+
+.dashboard__left--about {
+    width: calc(100% - 48px - 8px);
+}
+
+.dashboard__left--name {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    color: var(--color-black);
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+}
+
+.dashboard__left--company,
+.dasboard__left--location {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    color: var(--color-text-pale);
+    font-size: 10px;
+}
+
+.dashboard__right {
+    width: 780px;
+    height: 388px;
+}
+
+.dashboard__right--top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard__rigthTop--item {
+    width: 252px;
+    height: 84px;
+    padding: 14px;
+    box-shadow: 0 0 8px var(--color-black-medium);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+}
+
+.dashboard__rightTop--quantity {
+    margin-bottom: 8px;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.dashboard__rightTop--name {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.dashboard__right--bottom {
+    width: 780px;
+    height: 290px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard__rightBottom--item {
+    width: calc(50% - 6px);
+    height: 100%;
+    padding: 12px;
+    box-shadow: 0 0 8px var(--color-black-medium);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+}
+
+.dashboard__rightBottom--title {
+    font-size: 1.4rem;
+    padding: 8px 0;
+}
+
+.dashborad__rightBottom--boxChart {
+    width: 100%;
+    height: calc(100% - 38.4px);
+}
+
+#myChartJobOpportunityGrowthDashboard {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#myChartDemandJobDashboard {
+    width: 100% !important;
+    height: calc(100% - 50px) !important;
+}
+
+#htmlLegendDemandJobDashboard {
+    margin-top: 14px;
+    height: 36px;
+}
+
+#htmlLegendDemandJobDashboard .item {
+    align-items: center;
+    display: flex;
+    float: left;
+    margin-top: 4px;
+    width: 33.33%;
+}
+
+#htmlLegendDemandJobDashboard .item .color {
+    border-radius: 2px;
+    margin-right: 8px;
+    width: 12px;
+    height: 4px;
+}
+
+#htmlLegendDemandJobDashboard .item .text {
+    color: var(--color-black);
+    display: block;
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
 }

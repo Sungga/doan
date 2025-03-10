@@ -319,3 +319,29 @@ function autoPlay() {
 }
 setTimeout(autoPlay, 5000);
 
+// --------------------------------------<< DASHBOARD >>------------------------------------------
+const btnCloseDashboard = document.querySelector('.dashboard__close i');
+const dashboard = document.querySelector('.dashboard');
+const btnShowDashboard = document.querySelector('.slider__workMarket--seeMore');
+const dashboardContainer = document.querySelector('.dashboard__container');
+
+// close dashboard
+btnCloseDashboard.addEventListener('click', function() {
+    dashboard.style.display = 'none';
+});
+
+// show dashboard
+btnShowDashboard.addEventListener('click', function() {
+    dashboard.style.display = 'flex';
+});
+
+
+// Khi click vào dashboard mà không phải dashboard__container thì đóng dashboard
+dashboard.addEventListener('click', function(event) {
+    if (!dashboardContainer.contains(event.target)) {
+        dashboard.style.display = 'none';
+    }
+});
+
+
+
