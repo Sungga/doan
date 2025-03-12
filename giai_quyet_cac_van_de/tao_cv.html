@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo CV và Xuất Mã HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #cv-preview {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+    }
+
+    #html-output {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-family: monospace;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tạo CV và Xuất Mã HTML</h1>
+
+  <!-- Form nhập thông tin CV -->
+  <form id="cv-form">
+    <label for="name">Họ và tên:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="experience">Kinh nghiệm làm việc:</label>
+    <textarea id="experience" name="experience" rows="4" required></textarea>
+
+    <label for="skills">Kỹ năng:</label>
+    <textarea id="skills" name="skills" rows="4" required></textarea>
+
+    <label for="education">Học vấn:</label>
+    <textarea id="education" name="education" rows="4" required></textarea>
+
+    <label for="objective">Mục tiêu nghề nghiệp:</label>
+    <textarea id="objective" name="objective" rows="4" required></textarea>
+
+    <button type="button" onclick="generateCV()">Tạo CV</button>
+  </form>
+
+  <!-- Phần xem trước CV -->
+  <h2>Xem trước CV</h2>
+  <div id="cv-preview">
+    <h2 id="preview-name"></h2>
+    <p id="preview-email"></p>
+    <p id="preview-phone"></p>
+    <h3>Kinh nghiệm làm việc</h3>
+    <p id="preview-experience"></p>
+    <h3>Kỹ năng</h3>
+    <p id="preview-skills"></p>
+    <h3>Học vấn</h3>
+    <p id="preview-education"></p>
+    <h3>Mục tiêu nghề nghiệp</h3>
+    <p id="preview-objective"></p>
+  </div>
+
+  <!-- Phần xuất mã HTML -->
+  <h2>Mã HTML của CV</h2>
+  <textarea id="html-output" rows="20" cols="80" readonly></textarea>
+
+  <script>
+    function generateCV() {
+      // Lấy dữ liệu từ form
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const experience = document.getElementById('experience').value;
+      const skills = document.getElementById('skills').value;
+      const education = document.getElementById('education').value;
+      const objective = document.getElementById('objective').value;
+
+      // Hiển thị trong phần xem trước
+      document.getElementById('preview-name').innerText = name;
+      document.getElementById('preview-email').innerText = email;
+      document.getElementById('preview-phone').innerText = phone;
+      document.getElementById('preview-experience').innerText = experience;
+      document.getElementById('preview-skills').innerText = skills;
+      document.getElementById('preview-education').innerText = education;
+      document.getElementById('preview-objective').innerText = objective;
+
+      // Tạo mã HTML của CV
+      const cvPreview = document.getElementById('cv-preview').innerHTML;
+
+      // Xuất mã HTML vào textarea
+      document.getElementById('html-output').value = cvPreview;
+    }
+  </script>
+</body>
+</html>

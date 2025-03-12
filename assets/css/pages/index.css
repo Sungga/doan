@@ -771,3 +771,18 @@
     white-space: nowrap;
     width: 80%;
 }
+
+.listJob {
+    padding: 24px 0 0;
+}
+
+.listJob__title {
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-top: 0;
+    font-size: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

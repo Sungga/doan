@@ -720,7 +720,34 @@
                 </div>
             </div>
         </div>
+
+        <div class="listJob">
+            <div class="grid-container">
+                <div class="listJob__title">
+                    <h2>Việc làm mới nhất</h2>
+                    <div class="listJob__filter">
+                        <input type="text" placeholder="Tìm kiếm...">
+                        <div class="listJob__filter--sort">
+                            <select>
+                                <option value="">Sắp xếp theo</option>
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- chat bot -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Chưa có data câu hỏi mô!"
+      agent-id="020b6d32-f258-4915-93aa-7290ea1ae3c6"
+      language-code="vi"
+    ></df-messenger>
 
     <script src="assets/js/header.js"></script>
     <script src="assets/js/pages/index.js"></script>
