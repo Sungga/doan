@@ -723,22 +723,292 @@
 
         <div class="listJob">
             <div class="grid-container">
-                <div class="listJob__title">
-                    <h2>Việc làm mới nhất</h2>
-                    <div class="listJob__filter">
-                        <input type="text" placeholder="Tìm kiếm...">
-                        <div class="listJob__filter--sort">
-                            <select>
-                                <option value="">Sắp xếp theo</option>
-                                <option value="asc">Tăng dần</option>
-                                <option value="desc">Giảm dần</option>
-                            </select>
+                <div class="listJob__top">
+                    <h2 class="listJob__title">Việc làm mới nhất</h2>
+                    <a href="#" class="listJob__seeAll">Xem tất tất cả <span>&#187;</span></a>
+                </div>
+                <div class="listJob__filter">
+                    <div class="listJob__filter--type">
+                        <span class="listJob__filter--typeTitle"><i class="fa-solid fa-filter"></i> Lọc theo:</span>
+                        <span class="listJob__filter--typeSelect">Địa điểm <i class="fa-solid fa-chevron-down"></i></span>
+                        <ul class="listJob__filter--typeListType">
+                            <li class="listJob__filter--typeItemType listJob__filter--cities selected">Địa điểm</li>
+                            <li class="listJob__filter--typeItemType listJob__filter--salary">Mức lương</li>
+                            <li class="listJob__filter--typeItemType listJob__filter--experience">Kinh nghiệm</li>
+                            <li class="listJob__filter--typeItemType listJob__filter--categories">Ngành nghề</li>
+                        </ul>
+                    </div>
+                    <div class="listJob__filter--right">
+                        <i class="fa-solid fa-arrow-left listJob__filter--moveLeft"></i>
+                        <div class="listJob__filter--filterCities listJob__filter--filterContainer">
+                            <div class="listJob__filter--filterList">
+                                <div class="listJob__filter--filterItem selected">Ngẫu nhiên</div>
+                                <div class="listJob__filter--filterItem">Hà Nội</div>
+                                <div class="listJob__filter--filterItem">Thành phố Hồ Chí Minh</div>
+                                <div class="listJob__filter--filterItem">Miền Bắc</div>
+                                <div class="listJob__filter--filterItem">Miền Trung</div>
+                                <div class="listJob__filter--filterItem">Miền Nam</div>
+                            </div>
+                        </div>
+                        <div class="listJob__filter--filterSalary listJob__filter--filterContainer">
+                            <div class="listJob__filter--filterList">
+                                <div class="listJob__filter--filterItem selected">Tất cả</div>
+                                <div class="listJob__filter--filterItem">Dưới 10 triệu</div>
+                                <div class="listJob__filter--filterItem">Từ 10-15 triệu</div>
+                                <div class="listJob__filter--filterItem">Từ 15-20 triệu</div>
+                                <div class="listJob__filter--filterItem">Từ 20-25 triệu</div>
+                                <div class="listJob__filter--filterItem">Từ 25-30 triệu</div>
+                                <div class="listJob__filter--filterItem">Từ 30-50 triệu</div>
+                                <div class="listJob__filter--filterItem">Trên 50 triệu</div>
+                                <div class="listJob__filter--filterItem">Thỏa thuận</div>
+                            </div>
+                        </div>
+                        <div class="listJob__filter--filterExperience listJob__filter--filterContainer">
+                            <div class="listJob__filter--filterList">
+                                <div class="listJob__filter--filterItem selected">Tất cả</div>
+                                <div class="listJob__filter--filterItem">Chưa có kinh ngiệm</div>
+                                <div class="listJob__filter--filterItem">1 năm trở xuống</div>
+                                <div class="listJob__filter--filterItem">1 năm</div>
+                                <div class="listJob__filter--filterItem">2 năm</div>
+                                <div class="listJob__filter--filterItem">3 năm</div>
+                                <div class="listJob__filter--filterItem">Từ 4-5 năm</div>
+                                <div class="listJob__filter--filterItem">Trên 5 năm</div>
+                            </div>
+                        </div>
+                        <div class="listJob__filter--filterCategories listJob__filter--filterContainer">
+                            <div class="listJob__filter--filterList">
+                                <div class="listJob__filter--filterItem selected">Tất cả</div>
+                                <div class="listJob__filter--filterItem">Kinh doanh/Bán hàng</div>
+                                <div class="listJob__filter--filterItem">Biên/Phiên dịch</div>
+                                <div class="listJob__filter--filterItem">Báo chí/Truyền hình</div>
+                                <div class="listJob__filter--filterItem">Bưu chính/Viễn thông</div>
+                                <div class="listJob__filter--filterItem">Bưu chính - Viễn thông</div>
+                                <div class="listJob__filter--filterItem">Bảo hiểm</div>
+                                <div class="listJob__filter--filterItem">Bất Động sản</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right listJob__filter--moveRight"></i>
+                    </div>
+                </div>
+                <div class="listJob__list">
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
                         </div>
                     </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listJob__item">
+                        <div class="listJob__item--body">
+                            <a href="#">
+                                <div class="listJob__item--left">
+                                    <img src="assets/images/slide2.jpg" alt="" class="listJob__item--logo">
+                                </div>
+                            </a>
+                            <div class="listJob__item--right">
+                                <a href="#" class="listJob__item--title">Nhân Viên Kinh Doanh/Tư Vấn/ Bán Hàng Sản Phẩm Thể Thao (Yêu Thích Thể Thao, Full-Time, Làm Theo Ca, Cửa Hàng Thanh Xuân)</a>
+                                <a href="#" class="listJob__item--company">CÔNG TY CỔ PHẦN TẬP ĐOÀN DVN VIỆT NAM</a>
+                            </div>
+                        </div>
+                        <div class="listJob__item--footer">
+                            <div class="listJob__item--footerItem">
+                                <div class="listJob__item--info">10 - 20 triệu</div>
+                                <div class="listJob__item--info">Bình Dương</div>
+                            </div>
+                            <div class="listJob__item--footerItem">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="listJob__bottom">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <p><span>1</span> / 93 trang</p>
+                    <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
         </div>
     </div>
+
+    <div style="width: 100%; height: 100vh;"></div>
 
     <!-- chat bot -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>

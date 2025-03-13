@@ -9,9 +9,12 @@
   --color-text-pale: #6c6c6c;
   --color-base: #046bc9;
   --color-base-pale: #6ab7ff;
+  --color-base-super-pale: #d9edff;
   /* --color-base: #f58ee2; */
   --color-base-bold: #046bc9;
   --color-background-white: rgba(255, 255, 255, 0.5);
+  --color-text-pale: #444;
+  --color-background: #f3f5f7;
 
 
   --font-size-base: 1.4rem;

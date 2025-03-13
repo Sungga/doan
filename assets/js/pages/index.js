@@ -343,5 +343,84 @@ dashboard.addEventListener('click', function(event) {
     }
 });
 
+// --------------------------------------<< filter job >>------------------------------------------
+const listTypeJob = document.querySelector('.listJob__filter--typeListType');
+const filterJob = document.querySelector('.listJob__filter--typeSelect');
+const btnFilterCities = document.querySelector('.listJob__filter--cities');
+const btnFilterSalary = document.querySelector('.listJob__filter--salary');
+const btnFilterExperience = document.querySelector('.listJob__filter--experience');
+const btnFilterCategories = document.querySelector('.listJob__filter--categories');
+const filterCities = document.querySelector('.listJob__filter--filterCities');
+const filterSalary = document.querySelector('.listJob__filter--filterSalary');
+const filterExperience = document.querySelector('.listJob__filter--filterExperience');
+const filterCategory = document.querySelector('.listJob__filter--filterCategories');
+const moveLeftFilter = document.querySelector('.listJob__filter--moveLeft');
+const moveRightFilter = document.querySelector('.listJob__filter--moveRight');
+const listFilter = document.querySelectorAll('.listJob__filter--filterList');
+const listTypeItem = document.querySelectorAll('.listJob__filter--typeItemType');
+var value = 0;
 
+filterJob.addEventListener('click', () => {
+    if(listTypeJob.style.display == 'block') {
+        listTypeJob.style.display = 'none';
+        console.log('1');
+    }
+    else {
+        console.log('2');
+        listTypeJob.style.display = 'block';
+    }
+});
+
+function changeTypeFilter() {   
+    btnFilterCities.addEventListener('click', () => {
+        filterCities.style.display = 'flex';
+        filterSalary.style.display = 'none';
+        filterExperience.style.display = 'none';
+        filterCategory.style.display = 'none';
+        listTypeItem[value].classList.remove('selected');
+        value = 0;
+        listTypeItem[value].classList.add('selected');
+    });
+
+    btnFilterSalary.addEventListener('click', () => {
+        filterCities.style.display = 'none';
+        filterSalary.style.display = 'flex';
+        filterExperience.style.display = 'none';
+        filterCategory.style.display = 'none';
+        listTypeItem[value].classList.remove('selected');
+        value = 1;
+        listTypeItem[value].classList.add('selected');
+    });
+
+    btnFilterExperience.addEventListener('click', () => {
+        filterCities.style.display = 'none';
+        filterSalary.style.display = 'none';
+        filterExperience.style.display = 'flex';
+        filterCategory.style.display = 'none';
+        listTypeItem[value].classList.remove('selected');
+        value = 2;
+        listTypeItem[value].classList.add('selected');
+    });
+
+    btnFilterCategories.addEventListener('click', () => {
+        filterCities.style.display = 'none';
+        filterSalary.style.display = 'none';
+        filterExperience.style.display = 'none';
+        filterCategory.style.display = 'flex';
+        listTypeItem[value].classList.remove('selected');
+        value = 3;
+        listTypeItem[value].classList.add('selected');
+    });
+}
+changeTypeFilter();
+
+moveLeftFilter.addEventListener('click', () => {
+    listFilter[value].style.left = 0;
+    listFilter[value].style.right = 'unset';
+});
+
+moveRightFilter.addEventListener('click', () => {
+    listFilter[value].style.right = 0;
+    listFilter[value].style.left = 'unset';
+});
 
