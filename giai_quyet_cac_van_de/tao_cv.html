@@ -1,137 +1,162 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tạo CV và Xuất Mã HTML</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      box-sizing: border-box;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    #cv-preview {
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin-top: 20px;
-      background-color: #f9f9f9;
-    }
-
-    #html-output {
-      width: 100%;
-      margin-top: 20px;
-      padding: 10px;
-      box-sizing: border-box;
-      font-family: monospace;
-      background-color: #f1f1f1;
-      border: 1px solid #ccc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo CV Động</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+        }
+        button:hover {
+            background: darkblue;
+        }
+        .remove-btn {
+            background: red;
+            color: white;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        #cvPreview {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+    </style>
 </head>
 <body>
-  <h1>Tạo CV và Xuất Mã HTML</h1>
+    <div class="container">
+        <h2>Tạo CV của bạn</h2>
+        <form id="cvForm">
+            <label>Họ và Tên:</label>
+            <input type="text" id="name" required>
 
-  <!-- Form nhập thông tin CV -->
-  <form id="cv-form">
-    <label for="name">Họ và tên:</label>
-    <input type="text" id="name" name="name" required>
+            <label>Email:</label>
+            <input type="email" id="email" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+            <label>Điện thoại:</label>
+            <input type="text" id="phone" required>
 
-    <label for="phone">Số điện thoại:</label>
-    <input type="tel" id="phone" name="phone" required>
+            <h3>Kinh nghiệm</h3>
+            <div id="experienceList">
+                <input type="text" class="experience" placeholder="Nhập kinh nghiệm...">
+            </div>
+            <button type="button" onclick="addExperience()">+ Thêm kinh nghiệm</button>
 
-    <label for="experience">Kinh nghiệm làm việc:</label>
-    <textarea id="experience" name="experience" rows="4" required></textarea>
+            <h3>Kỹ năng</h3>
+            <div id="skillsList">
+                <input type="text" class="skill" placeholder="Nhập kỹ năng...">
+            </div>
+            <button type="button" onclick="addSkill()">+ Thêm kỹ năng</button>
 
-    <label for="skills">Kỹ năng:</label>
-    <textarea id="skills" name="skills" rows="4" required></textarea>
+            <button type="button" onclick="generateCV()">Xem trước CV</button>
+        </form>
 
-    <label for="education">Học vấn:</label>
-    <textarea id="education" name="education" rows="4" required></textarea>
+        <div id="cvPreview"></div>
+    </div>
 
-    <label for="objective">Mục tiêu nghề nghiệp:</label>
-    <textarea id="objective" name="objective" rows="4" required></textarea>
+    <script>
+        function addExperience() {
+            let div = document.createElement("div");
+            let input = document.createElement("input");
+            input.type = "text";
+            input.classList.add("experience");
+            input.placeholder = "Nhập kinh nghiệm...";
 
-    <button type="button" onclick="generateCV()">Tạo CV</button>
-  </form>
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "Xóa";
+            removeBtn.type = "button";
+            removeBtn.classList.add("remove-btn");
+            removeBtn.onclick = function () {
+                div.remove();
+            };
 
-  <!-- Phần xem trước CV -->
-  <h2>Xem trước CV</h2>
-  <div id="cv-preview">
-    <h2 id="preview-name"></h2>
-    <p id="preview-email"></p>
-    <p id="preview-phone"></p>
-    <h3>Kinh nghiệm làm việc</h3>
-    <p id="preview-experience"></p>
-    <h3>Kỹ năng</h3>
-    <p id="preview-skills"></p>
-    <h3>Học vấn</h3>
-    <p id="preview-education"></p>
-    <h3>Mục tiêu nghề nghiệp</h3>
-    <p id="preview-objective"></p>
-  </div>
+            div.appendChild(input);
+            div.appendChild(removeBtn);
+            document.getElementById("experienceList").appendChild(div);
+        }
 
-  <!-- Phần xuất mã HTML -->
-  <h2>Mã HTML của CV</h2>
-  <textarea id="html-output" rows="20" cols="80" readonly></textarea>
+        function addSkill() {
+            let div = document.createElement("div");
+            let input = document.createElement("input");
+            input.type = "text";
+            input.classList.add("skill");
+            input.placeholder = "Nhập kỹ năng...";
 
-  <script>
-    function generateCV() {
-      // Lấy dữ liệu từ form
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const experience = document.getElementById('experience').value;
-      const skills = document.getElementById('skills').value;
-      const education = document.getElementById('education').value;
-      const objective = document.getElementById('objective').value;
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "Xóa";
+            removeBtn.type = "button";
+            removeBtn.classList.add("remove-btn");
+            removeBtn.onclick = function () {
+                div.remove();
+            };
 
-      // Hiển thị trong phần xem trước
-      document.getElementById('preview-name').innerText = name;
-      document.getElementById('preview-email').innerText = email;
-      document.getElementById('preview-phone').innerText = phone;
-      document.getElementById('preview-experience').innerText = experience;
-      document.getElementById('preview-skills').innerText = skills;
-      document.getElementById('preview-education').innerText = education;
-      document.getElementById('preview-objective').innerText = objective;
+            div.appendChild(input);
+            div.appendChild(removeBtn);
+            document.getElementById("skillsList").appendChild(div);
+        }
 
-      // Tạo mã HTML của CV
-      const cvPreview = document.getElementById('cv-preview').innerHTML;
+        function generateCV() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
 
-      // Xuất mã HTML vào textarea
-      document.getElementById('html-output').value = cvPreview;
-    }
-  </script>
+            let experiences = document.querySelectorAll(".experience");
+            let experienceText = "";
+            experiences.forEach(exp => {
+                experienceText += `<li>${exp.value}</li>`;
+            });
+
+            let skills = document.querySelectorAll(".skill");
+            let skillsText = "";
+            skills.forEach(skill => {
+                skillsText += `<li>${skill.value}</li>`;
+            });
+
+            document.getElementById("cvPreview").innerHTML = `
+                <h2>${name}</h2>
+                <p>Email: ${email}</p>
+                <p>Điện thoại: ${phone}</p>
+                <h3>Kinh nghiệm</h3>
+                <ul>${experienceText}</ul>
+                <h3>Kỹ năng</h3>
+                <ul>${skillsText}</ul>
+            `;
+        }
+    </script>
 </body>
 </html>
