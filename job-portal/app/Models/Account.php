@@ -10,6 +10,6 @@ class Account extends Model
     use HasFactory;
 
     protected $table = 'accounts'; // Đặt tên bảng
-    protected $fillable = ['email', 'password', 'role'];
+    protected $fillable = ['username', 'password', 'role'];
     protected $hidden = ['password']; // Ẩn mật khẩu khi trả về JSON
 }

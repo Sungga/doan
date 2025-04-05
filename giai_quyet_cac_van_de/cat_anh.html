@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+</head>
+<body>
+    <input type="file" id="avatarInput">
+    <div style="width: 300px; height: 300px; overflow: hidden;">
+        <img id="avatarPreview" style="max-width: 100%;">
+    </div>
+    <button id="cropButton">Cắt và Upload</button>
+    <form id="uploadForm" action="{{ route('upload-avatar') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="cropped_image" id="croppedImage">
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cropper;
+            const avatarInput = document.getElementById("avatarInput");
+            const avatarPreview = document.getElementById("avatarPreview");
+            const cropButton = document.getElementById("cropButton");
+            const croppedImageInput = document.getElementById("croppedImage");
+            const uploadForm = document.getElementById("uploadForm");
+        
+            avatarInput.addEventListener("change", function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        avatarPreview.src = e.target.result;
+        
+                        // Hủy cropper nếu đã tồn tại
+                        if (cropper) {
+                            cropper.destroy();
+                        }
+        
+                        // Khởi tạo cropper
+                        cropper = new Cropper(avatarPreview, {
+                            aspectRatio: 1, // Luôn giữ hình vuông
+                            viewMode: 1, // Đảm bảo vùng cắt luôn trong ảnh
+                            movable: true, // Không cho di chuyển ảnh
+                            zoomable: true, // Không cho zoom
+                            scalable: true, // Không cho phóng to/thu nhỏ ảnh
+                            cropBoxResizable: false, // Không cho resize vùng cắt
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        
+            cropButton.addEventListener("click", function() {
+                if (cropper) {
+                    // Lấy dữ liệu ảnh đã cắt
+                    const canvas = cropper.getCroppedCanvas({
+                        width: 300, // Kích thước cố định
+                        height: 300
+                    });
+        
+                    // Chuyển canvas thành base64
+                    croppedImageInput.value = canvas.toDataURL("image/jpeg");
+        
+                    // Submit form
+                    uploadForm.submit();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

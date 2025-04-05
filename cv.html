@@ -1,0 +1,13 @@
+<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+<script src="https://unpkg.com/grapesjs"></script>
+<script src="https://unpkg.com/grapesjs-preset-webpage"></script>
+
+<div id="gjs"></div>
+
+<script>
+  const editor = grapesjs.init({
+    container: '#gjs',
+    plugins: ['grapesjs-preset-webpage'],
+    storageManager: false,
+  });
+</script>

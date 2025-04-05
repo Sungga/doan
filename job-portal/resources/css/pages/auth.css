@@ -28,10 +28,26 @@
     border-radius: 2.4rem;
     box-shadow: 0 4px 24px #0000000d;
     position: relative;
+    height: 90vh;
+    /* overflow-y: scroll; */
+    overflow-y: auto; /* Chỉ hiển thị thanh cuộn khi cần */
+    /* scrollbar-gutter: stable; Tránh thanh cuộn đẩy nội dung */
 }
+@media (max-width: 480px) {
+    .login__container {
+        margin: auto 8px;
+    }}
+@media (min-width: 481px) and (max-width: 1024px) {
+    .login__container {
+        margin: auto;
+    }}
+@media (min-width: 1025px) {
+    .login__container {
+        margin: auto;
+    }}
 
 .exit {
-    position: absolute;
+    position: fixed;
     top: 6px;
     right: 8px;
     font-size: 1.6rem;
@@ -39,12 +55,23 @@
     background-color: var(--color-base);
     color: var(--color-white);
     padding: 4px 8px;
+    z-index: 9999;
 }
 
 .login__title {
     font-size: 2.4rem;
     text-align: center;
     margin-bottom: 32px;
+}
+
+form {
+    width: 100%;
+}
+
+.login__name {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    color: #636363;
 }
 
 .login__title i {
@@ -92,6 +119,22 @@ hoặc có nội dung, label sẽ nhảy lên */
     top: 0;
     font-size: 12px;
     color: #ccc;
+}
+
+.login__input input[type="password"] {
+    padding: 12px 40px 12px 10px;
+}
+
+.login__input button {
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.4rem;
+    color: #888;
+    transition: color 0.3s;
 }
 
 .login__recoverPass {
@@ -205,4 +248,27 @@ hoặc có nội dung, label sẽ nhảy lên */
 
 .send-code:hover {
     color: var(--color-base);
+}
+
+input[type="date"]{
+    background-color: #0080ff;
+    padding: 15px;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
 }

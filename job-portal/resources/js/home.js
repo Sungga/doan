@@ -1,2 +1,2 @@
-import './base/header.js';
-import './pages/home.js';
+import '@/base/header.js';
+import '@/pages/home.js';

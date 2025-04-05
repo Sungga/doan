@@ -19,9 +19,9 @@
 <body>
     <div class="container">
         <div class="login">
+            <a href="./" class="exit"><i class="fa-solid fa-house"></i></a>
             <img class="login__background" src="{{ asset('storage/uploads/blue2.jpg') }}" alt="">
             <div class="login__container">
-                <a href="./" class="exit"><i class="fa-solid fa-house"></i></a>
                 <h3 class="login__title"><i class="fa-solid fa-registered"></i> ĐĂNG KÝ</h3>
                 <form action="{{ route('register') }}" method="POST">
                     {{-- @csrf --}}
@@ -29,6 +29,10 @@
                     <div class="login__input">
                         <input type="text" name="name" id="name" placeholder="" required>
                         <label for="name">Họ và tên</label>
+                    </div>
+                    <div class="login__input">
+                        <input type="text" name="username" id="username" placeholder="" required>
+                        <label for="username">Tên đăng nhập</label>
                     </div>
                     <div class="login__input">
                         <input type="email" name="email" id="email" placeholder="" required>
@@ -42,6 +46,9 @@
                         <input type="text" name="code" id="code" placeholder="" class="send-code__input" required>
                         <label for="code">Mã xác nhận</label>
                         <div class="send-code">Gửi mã</div>
+                        @error('code')
+                            <span class="error-message">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="login__input">
                         <select name="role" id="role">
@@ -66,60 +73,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {{-- <script>
         let code = '';
-        $(document).ready(function () {
-            // Sự kiện click nút "Gửi mã"
-            $(".send-code").click(function (e) {
-                e.preventDefault(); // Ngăn chặn hành động mặc định của button (nếu có)
-
-                // Lấy giá trị email từ input
-                let email = $("#email").val();
-
-                // Kiểm tra nếu email không được nhập
-                if (!email) {
-                    alert("Vui lòng nhập email trước khi gửi mã!");
-                    return;
-                }
-
-                // Gửi yêu cầu AJAX
-                $.ajax({
-                    url: "/send-code",
-                    type: "POST",
-                    data: {
-                        email: email, // Gửi email cùng với request
-                        _token: "{{ csrf_token() }}" // Token CSRF
-                    },
-                    success: function (response) {
-                        // Hiển thị phản hồi từ server
-                        // alert("Phản hồi từ server: " + JSON.stringify(response));
-                        console.log(response); // Log phản hồi ra console để kiểm tra
-                        code = response.data;
-                        alert("Đã gửi mã xác nhận thành công!");
-                    },
-                    error: function (xhr) {
-                        alert("Gửi mã thất bại! Vui lòng thử lại.");
-                    }
-                });
-            });
-
-            // Sự kiện submit form
-            $("form").submit(function (e) {
-                // Lấy giá trị từ input code
-                let inputCode = $("#code").val();
-
-                // Kiểm tra xem input code có giống với biến code không
-                if (inputCode !== code) {
-                    alert("Mã xác nhận không đúng! Vui lòng kiểm tra lại.");
-                    e.preventDefault(); // Ngăn chặn việc submit form
-                } else {
-                    alert("Mã xác nhận đúng. Đang tiến hành đăng ký...");
-                    // Cho phép submit form
-                }
-            });
-        });
-        
-    </script> --}}
-    <script>
-        let code = '';
         let countdown = 60; // Thời gian đếm ngược (giây)
         let timer; // Biến lưu bộ đếm
 
@@ -140,6 +93,10 @@
                     return;
                 }
 
+                // Vô hiệu hóa nút gửi mã và bắt đầu đếm ngược
+                $(".send-code").prop("disabled", true).text(`Gửi lại sau ${countdown}s`);
+                timer = setInterval(updateCountdown, 1000);
+
                 // Gửi yêu cầu AJAX
                 $.ajax({
                     url: "/send-code",
@@ -153,9 +110,9 @@
                         code = response.data;
                         alert("Đã gửi mã xác nhận thành công!");
 
-                        // Vô hiệu hóa nút gửi mã và bắt đầu đếm ngược
-                        $(".send-code").prop("disabled", true).text(`Gửi lại sau ${countdown}s`);
-                        timer = setInterval(updateCountdown, 1000);
+                        // // Vô hiệu hóa nút gửi mã và bắt đầu đếm ngược
+                        // $(".send-code").prop("disabled", true).text(`Gửi lại sau ${countdown}s`);
+                        // timer = setInterval(updateCountdown, 1000);
                     },
                     error: function () {
                         alert("Gửi mã thất bại! Vui lòng thử lại.");
@@ -185,6 +142,78 @@
             });
         });
 
+    </script> --}}
+    <script>
+        let countdown = 60; // Thời gian đếm ngược (giây)
+        let timer; // Biến lưu bộ đếm
+    
+        $(document).ready(function () {
+            // Gửi mã xác nhận
+            $(".send-code").click(function (e) {
+                e.preventDefault();
+    
+                let email = $("#email").val();
+                if (!email) {
+                    alert("Vui lòng nhập email trước khi gửi mã!");
+                    return;
+                }
+    
+                // Kiểm tra nếu đang trong thời gian đếm ngược
+                if (countdown < 60) {
+                    alert(`Vui lòng chờ ${countdown} giây trước khi gửi lại.`);
+                    return;
+                }
+    
+                // Vô hiệu hóa nút gửi mã và bắt đầu đếm ngược
+                $(".send-code").prop("disabled", true).text(`Gửi lại sau ${countdown}s`);
+                timer = setInterval(updateCountdown, 1000);
+    
+                // Gửi yêu cầu AJAX
+                $.ajax({
+                    url: "/send-code",
+                    type: "POST",
+                    data: {
+                        email: email,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                        } else {
+                            alert(response.message);
+                            // Nếu gửi thất bại, reset countdown
+                            clearInterval(timer);
+                            $(".send-code").prop("disabled", false).text("Gửi mã");
+                            countdown = 60;
+                        }
+                    },
+                    error: function (xhr) {
+                        let errorMsg = "Gửi mã thất bại! Vui lòng thử lại.";
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMsg = xhr.responseJSON.message;
+                        }
+                        alert(errorMsg);
+                        clearInterval(timer);
+                        $(".send-code").prop("disabled", false).text("Gửi mã");
+                        countdown = 60;
+                    }
+                });
+            });
+    
+            function updateCountdown() {
+                countdown--;
+                $(".send-code").text(`Gửi lại sau ${countdown}s`);
+    
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    $(".send-code").prop("disabled", false).text("Gửi mã");
+                    countdown = 60;
+                }
+            }
+    
+            // Không cần kiểm tra mã ở frontend nữa
+            // Backend sẽ tự kiểm tra khi submit form
+        });
     </script>
 </body>
 </html>

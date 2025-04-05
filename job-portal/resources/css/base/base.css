@@ -43,3 +43,26 @@
   @media (min-width: 1200px) {
     .grid-container {
       max-width: 1140px; } }
+
+
+/* Chỉnh độ mỏng của thanh cuộn */
+::-webkit-scrollbar {
+  width: 1px;  /* Độ rộng dọc */
+  /* height: 5px; Độ rộng ngang */
+}
+
+/* Màu nền thanh cuộn */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Màu và bo tròn của thanh kéo */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Khi hover vào thanh kéo */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
