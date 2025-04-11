@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GrapesJS Demo</title>
+  <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
+  <style>
+    body, html { height: 100%; margin: 0; }
+    #gjs { height: 100%; }
+    #blocks { background: #f4f4f4; padding: 10px; width: 250px; float: left; height: 100%; }
+  </style>
+</head>
+<body>
+
+  <div id="blocks">
+    <!-- Các block sẽ được thêm vào đây -->
+  </div>
+
+  <div id="gjs">
+    <h1>Chào mừng đến với trình thiết kế!</h1>
+    <p>Bạn có thể kéo thả các khối vào đây.</p>
+  </div>
+
+  <script src="https://unpkg.com/grapesjs"></script>
+  <script>
+    const editor = grapesjs.init({
+      container: '#gjs',
+      fromElement: true,
+      height: '100%',
+      width: 'auto',
+      storageManager: false,
+      panels: {
+        defaults: [
+          {
+            id: 'panel-top',
+            el: '.panel__top',
+            buttons: [{
+              id: 'save',
+              className: 'fa fa-floppy-o',
+              label: 'Save',
+              command: 'save-command',
+            }]
+          },
+          {
+            id: 'panel-left',
+            el: '#blocks', // Thêm block vào Sidebar
+            resizable: true,
+          },
+        ],
+      },
+      blockManager: {
+        appendTo: '#blocks', // Đây là phần Sidebar chứa các block
+      },
+    });
+
+    // Khối "2 Cột"
+    editor.BlockManager.add('2-columns', {
+      label: '2 Cột',
+      content: `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div style="background: #f2f2f2; padding: 20px;">Cột 1</div>
+                  <div style="background: #e2e2e2; padding: 20px;">Cột 2</div>
+                </div>`,
+      category: 'Layout',
+    });
+
+    // Khối "3 Cột"
+    editor.BlockManager.add('3-columns', {
+      label: '3 Cột',
+      content: `<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                  <div style="background: #f2f2f2; padding: 20px;">Cột 1</div>
+                  <div style="background: #e2e2e2; padding: 20px;">Cột 2</div>
+                  <div style="background: #d2d2d2; padding: 20px;">Cột 3</div>
+                </div>`,
+      category: 'Layout',
+    });
+
+    // Khối "4 Cột"
+    editor.BlockManager.add('4-columns', {
+      label: '4 Cột',
+      content: `<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px;">
+                  <div style="background: #f2f2f2; padding: 20px;">Cột 1</div>
+                  <div style="background: #e2e2e2; padding: 20px;">Cột 2</div>
+                  <div style="background: #d2d2d2; padding: 20px;">Cột 3</div>
+                  <div style="background: #c2c2c2; padding: 20px;">Cột 4</div>
+                </div>`,
+      category: 'Layout',
+    });
+
+    // Khối "Flexbox - Hàng ngang"
+    editor.BlockManager.add('flex-row', {
+      label: 'Hàng ngang',
+      content: `<div style="display: flex; gap: 10px;">
+                  <div style="flex: 1; padding: 10px; background: #eee;">Cột 1</div>
+                  <div style="flex: 1; padding: 10px; background: #ddd;">Cột 2</div>
+                </div>`,
+      category: 'Layout',
+    });
+  </script>
+
+</body>
+</html>

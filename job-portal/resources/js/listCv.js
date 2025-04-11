@@ -1,1 +1,1 @@
-import '@/pages/listCv.js';
+import '@/cv/listCv.js';

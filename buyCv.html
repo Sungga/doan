@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- font google -->
+    <link rel="stylesheet" href="assets/font/Inter/Inter-VariableFont_opsz,wght.ttf">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <style>
+        .buyCv {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .5);
+            display: flex;
+        }
+
+        .buyCv__container {
+            width: 1200px;
+            max-height: 90vh;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            z-index: 2147483647;
+            margin: auto;
+            padding: 32px;
+            position: relative;
+        }
+
+        .buyCv__exit {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 2.4rem;
+            cursor: pointer;
+        }
+
+        .buyCv__title {
+            width: 100%;
+            text-align: center;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+        }
+
+        .buyCv__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .buyCv__item {
+            width: 360px;
+            background-color: var(--color-background);
+            padding: 16px;
+            border-radius: 20px;
+        }
+
+        .buyCv__name {
+            width: 100%;
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 32px;
+        }
+
+        .buyCv__about {
+            font-size: 1.4rem;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .buyCv__btn {
+            display: block;
+            font-size: 1.4rem;
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid var(--color-base);
+            padding: 8px 16px;
+            text-align: center;
+            transition: all .3s ease;
+        }
+
+        .buyCv__btn:hover {
+            background-color: var(--color-base);
+            color: var(--color-white);
+        }
+
+        .buyCv__price {
+            font-style: italic;
+            font-size: 1.6rem;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 32px;
+            font-weight: 700;
+            color: var(--color-base);
+        }
+    </style>
+</head>
+<body>
+    <div class="buyCv">
+        <div class="buyCv__container">
+            <i class="fa-solid fa-circle-xmark buyCv__exit"></i>
+            <h2 class="buyCv__title">Chọn gói muốn mua</h2>
+            <div class="buyCv__list">
+                <div class="buyCv__item">
+                    <h3 class="buyCv__name">Gói cơ bản</h3>
+                    <p class="buyCv__about">Tăng giới hạn lưu trữ thêm <span style="color: var(--color-base);">+ 3 CV</span></p>
+                    <p class="buyCv__price">Giá 19.000₫</p>
+                    <a class="buyCv__btn" href="#">Mua</a>
+                </div>
+                <div class="buyCv__item">
+                    <h3 class="buyCv__name">Gói nâng cao</h3>
+                    <p class="buyCv__about">Tăng giới hạn lưu trữ thêm <span style="color: var(--color-base);">+ 10 CV</span></p>
+                    <p class="buyCv__price">Giá 39.000₫</p>
+                    <a class="buyCv__btn" href="#">Mua</a>
+                </div>
+                <div class="buyCv__item">
+                    <h3 class="buyCv__name">Gói không giới hạn</h3>
+                    <p class="buyCv__about">Lưu trữ CV <span style="color: var(--color-base);">không giới hạn</span></p>
+                    <p class="buyCv__price">Giá 100.000₫</p>
+                    <a class="buyCv__btn" href="#">Mua</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
