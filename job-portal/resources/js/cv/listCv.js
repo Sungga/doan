@@ -21,21 +21,83 @@ document.addEventListener('click', (event) => {
 
 // --------------------------------------<< js show form list buy CV >>-----------------------------------------
 const showFormBuyCvBtn = document.querySelector('#btn-add-limit');
-const hiddemFormListCvBtn = document.querySelector('.buyCv__exit');
-const formListCv = document.querySelector('.buyCv');
+const hiddenFormBuyCvBtn = document.querySelector('.buyCv__exit');
+const formBuyCv = document.querySelector('.buyCv');
+const formBuyCvCont = document.querySelector('.buyCv__container');
 
-showFormBuyCvBtn.addEventListener('click', function() {
-    formListCv.style.display = 'flex';
-})
+const showFormAddCvBtn = document.querySelector('.listCv__top--addBtn');
+const hiddenFormAddCvBtn = document.querySelector('.addCv__exit');
+const formAddCv = document.querySelector('.addCv');
+const formAddCvCont = document.querySelector('.addCv__container');
 
-hiddemFormListCvBtn.addEventListener('click', function() {
-    formListCv.style.display = 'none';
-})
+function toggleContainer(showFormBtn, hiddenFormBtn, form, formCont) {
+    showFormBtn.addEventListener('click', function() {
+        form.style.display = 'flex';
+    })
+    hiddenFormBtn.addEventListener('click', function() {
+        form.style.display = 'none';
+    })
+    document.addEventListener('click', (event) => {
+        if (!formCont.contains(event.target) && !showFormBtn.contains(event.target)) {
+            form.style.display = 'none';
+        }
+    });
+}
 
+toggleContainer(showFormBuyCvBtn, hiddenFormBuyCvBtn, formBuyCv, formBuyCvCont);
+toggleContainer(showFormAddCvBtn, hiddenFormAddCvBtn, formAddCv, formAddCvCont);
 
-document.addEventListener('click', (event) => {
-    if (!formListCv.contains(event.target) && !showFormBuyCvBtn.contains(event.target)) {
-        alert('1')
-        formListCv.style.display = 'none';
+// -----------------<< JS FOR INPUT FILE CV >>---------------------
+const fileInputCv = document.getElementById('cv');
+const labelCv = document.querySelector('label[for="cv"]');
+
+// change content in label Cv when have file in inputCv
+fileInputCv.addEventListener('change', function () {
+    if (this.files && this.files.length > 0) {
+        labelCv.textContent = this.files[0].name;
+    } else {
+        labelCv.textContent = 'Tải lên CV của bạn';
+    }
+});
+
+// drop file in label
+// Ngăn hành vi mặc định của trình duyệt
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    labelCv.addEventListener(eventName, e => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+// Hiệu ứng khi kéo file vào
+labelCv.addEventListener('dragover', () => {
+    labelCv.classList.add('dragover');
+});
+
+labelCv.addEventListener('dragleave', () => {
+    labelCv.classList.remove('dragover');
+});
+
+labelCv.addEventListener('drop', e => {
+    labelCv.classList.remove('dragover');
+
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+        const file = files[0];
+        labelCv.textContent = file.name;
+
+        // Gán file vào input
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInputCv.files = dataTransfer.files;
+    }
+});
+
+// Khi chọn file bằng input (bấm chọn)
+fileInputCv.addEventListener('change', function () {
+    if (this.files && this.files.length > 0) {
+        labelCv.textContent = this.files[0].name;
+    } else {
+        labelCv.textContent = 'Tải lên CV của bạn';
     }
 });

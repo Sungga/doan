@@ -28,10 +28,9 @@
     border-radius: 2.4rem;
     box-shadow: 0 4px 24px #0000000d;
     position: relative;
-    height: 90vh;
-    /* overflow-y: scroll; */
-    overflow-y: auto; /* Chỉ hiển thị thanh cuộn khi cần */
-    /* scrollbar-gutter: stable; Tránh thanh cuộn đẩy nội dung */
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 @media (max-width: 480px) {
     .login__container {

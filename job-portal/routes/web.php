@@ -29,6 +29,9 @@ Route::post('/send-code', [AuthController::class, 'sendCode'])->name('sendCode')
 
 Route::middleware([CheckUserSession::class])->group(function () {
     Route::get('cv/listCv', [CvController::class, 'listCv'])->name('listCv');
+    Route::get('cv', [CvController::class, 'listCv'])->name('listCv');
     Route::get('cv/makeCv', [CvController::class, 'makeCv'])->name('makeCv.form');
-    Route::get('/cv/BuyCv', [CvController::class, 'buyCvForm'])->name('buyCv.form');
+    Route::get('cv/BuyCv', [CvController::class, 'buyCvForm'])->name('buyCv.form');
+    // Route::post('/cv/BuyCv', [CvController::class, 'buyCvForm'])->name('upload.cv');
+    Route::post('cv/uploadCv', [CvController::class, 'uploadCv'])->name('upload.cv');
 });

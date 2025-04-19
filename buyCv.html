@@ -1,137 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!-- font google -->
-    <link rel="stylesheet" href="assets/font/Inter/Inter-VariableFont_opsz,wght.ttf">
-
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/reset.css">
-
-    <style>
-        .buyCv {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, .5);
-            display: flex;
-        }
-
-        .buyCv__container {
-            width: 1200px;
-            max-height: 90vh;
-            background-color: rgb(255, 255, 255);
-            border-radius: 20px;
-            z-index: 2147483647;
-            margin: auto;
-            padding: 32px;
-            position: relative;
-        }
-
-        .buyCv__exit {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            font-size: 2.4rem;
-            cursor: pointer;
-        }
-
-        .buyCv__title {
-            width: 100%;
-            text-align: center;
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-        }
-
-        .buyCv__list {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-
-        .buyCv__item {
-            width: 360px;
-            background-color: var(--color-background);
-            padding: 16px;
-            border-radius: 20px;
-        }
-
-        .buyCv__name {
-            width: 100%;
-            text-align: center;
-            font-size: 2.4rem;
-            margin-bottom: 32px;
-        }
-
-        .buyCv__about {
-            font-size: 1.4rem;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .buyCv__btn {
-            display: block;
-            font-size: 1.4rem;
-            width: 100%;
-            border-radius: 20px;
-            border: 1px solid var(--color-base);
-            padding: 8px 16px;
-            text-align: center;
-            transition: all .3s ease;
-        }
-
-        .buyCv__btn:hover {
-            background-color: var(--color-base);
-            color: var(--color-white);
-        }
-
-        .buyCv__price {
-            font-style: italic;
-            font-size: 1.6rem;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 32px;
-            font-weight: 700;
-            color: var(--color-base);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>QR Thanh Toán MoMo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #qrcode {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="buyCv">
-        <div class="buyCv__container">
-            <i class="fa-solid fa-circle-xmark buyCv__exit"></i>
-            <h2 class="buyCv__title">Chọn gói muốn mua</h2>
-            <div class="buyCv__list">
-                <div class="buyCv__item">
-                    <h3 class="buyCv__name">Gói cơ bản</h3>
-                    <p class="buyCv__about">Tăng giới hạn lưu trữ thêm <span style="color: var(--color-base);">+ 3 CV</span></p>
-                    <p class="buyCv__price">Giá 19.000₫</p>
-                    <a class="buyCv__btn" href="#">Mua</a>
-                </div>
-                <div class="buyCv__item">
-                    <h3 class="buyCv__name">Gói nâng cao</h3>
-                    <p class="buyCv__about">Tăng giới hạn lưu trữ thêm <span style="color: var(--color-base);">+ 10 CV</span></p>
-                    <p class="buyCv__price">Giá 39.000₫</p>
-                    <a class="buyCv__btn" href="#">Mua</a>
-                </div>
-                <div class="buyCv__item">
-                    <h3 class="buyCv__name">Gói không giới hạn</h3>
-                    <p class="buyCv__about">Lưu trữ CV <span style="color: var(--color-base);">không giới hạn</span></p>
-                    <p class="buyCv__price">Giá 100.000₫</p>
-                    <a class="buyCv__btn" href="#">Mua</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <h2>QR Thanh Toán MoMo</h2>
+  <p>Quét mã bằng app MoMo để thanh toán</p>
+  <div id="qrcode"></div>
+
+  <script>
+    // Khai báo biến
+    const amount = "123456";         // 💸 Số tiền (không có dấu chấm)
+    const note = "hehe";             // 📝 Nội dung chuyển tiền
+
+    // Ghép chuỗi QR cố định, chỉ thay amount và note
+    const qrData = 
+      "00020101021138620010A00000072701320006970454011899MM25106M888772640208QRIBFTTA5303704" +
+      "5406" + amount +              // 54 + độ dài 6 ký tự của số tiền
+      "5802VN62280516MOMOW2W1033157260804" + note +  // note gắn trực tiếp
+      "6304F165";                   // CRC tĩnh (chỉ đúng nếu không thay đổi gì khác ngoài nội dung)
+
+    // Tạo QR
+    new QRCode(document.getElementById("qrcode"), {
+      text: qrData,
+      width: 256,
+      height: 256,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
 </body>
 </html>
